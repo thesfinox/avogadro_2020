@@ -217,7 +217,7 @@ $$
 - simple **matrix multiplications** $+$ **non linearity**
 <div class="red2">
 $$
-a^{\{l+1\}} = \phi\left( w^{\{l\}} a^{\{l\}} + b^{\{l\}} \mathbb{I} \right)
+a^{\{l+1\}} = \phi\left( w^{\{l\}} a^{\{l\}} + b^{\{l\}} \mathbb{I} \right) \in \mathbb{R}^p
 $$
 $$
 \phi(z) = \mathrm{ReLU}(z) = \max(0, z)
@@ -245,7 +245,7 @@ $$
 - based on **sliding windows** (aka *convolutions*)
 <span class="red2">
 $$
-a^{\{l+1\}} = \phi\left( w^{\{l\}} * a^{\{l\}} + b^{\{l\}} \mathbb{I} \right)
+a^{\{l+1\}} = \phi\left( w^{\{l\}} * a^{\{l\}} + b^{\{l\}} \mathbb{I} \right) \in \mathbb{R}^{p \times q}
 $$
 </span>
 - **less parameters** to *isolate features*
@@ -386,7 +386,10 @@ A. Samuel (1959)
 ### What Lies Ahead?
 
 <div class="fcenter">
-- improve $h^{2,1}$ and **"un-blackbox the model** (SHAP, filter analysis, etc.)
+- improve $h^{2,1}$ and **"un-blackbox" the model** (SHAP, filter analysis, etc.)
 - exploration for CICY 4-folds and **representation learning** (DGAN, VAE, etc.)
 - study **symmetries** (GNNs, Transformers, etc.) and explore the **sting landscape**
+</div>
+<div class="fright red2">
+THANK YOU
 </div>
