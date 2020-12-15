@@ -385,17 +385,8 @@ A. Samuel (1959)
 
 ### What Lies Ahead?
 
-<div class="columns-2">
 <div class="fcenter">
-- improve $h^{2,1}$ for CICY 3-folds
-- more exploration for CICY 4-folds
-- study **symmetries** (GNNs, Transformers, etc.)
+- improve $h^{2,1}$ and **"un-blackbox the model** (SHAP, filter analysis, etc.)
+- exploration for CICY 4-folds and **representation learning** (DGAN, VAE, etc.)
+- study **symmetries** (GNNs, Transformers, etc.) and explore the **sting landscape**
 </div>
-
-<div class="fcenter">
-- "un-blackbox" the model (SHAP, filter analysis, etc.)
-- **representation learning** (DGAN, VAE, etc.)
-- exploration of the **string landscape**
-</div>
-</div>
-
