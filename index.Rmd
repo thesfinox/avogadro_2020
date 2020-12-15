@@ -213,7 +213,8 @@ $$
 </div>
 <div class="fcenter">
 - older in design <span class="green2">[Rosenblatt (1958)]</span>
-- rose to fame **in the 80s** (first self driving cars, OCR, competitions, etc.)
+- analogy *neuron - "perceptron"*
+- rose to fame **in the 70s/80s**
 - simple **matrix multiplications** $+$ **non linearity**
 <span class="red2">
 $$
