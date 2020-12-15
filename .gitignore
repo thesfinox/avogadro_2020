@@ -2,7 +2,3 @@
 .Rhistory
 .RData
 .Ruserdata
-data/*
-img/*.pdf
-img/*.pgf
-img/*.pdf_text
