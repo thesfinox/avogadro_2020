@@ -1,7 +1,7 @@
 ---
 title: "Inception Neural Networks for Complete Intersection Calabi-Yau Manifolds"
 author: "<b>Riccardo Finotello (UniTO)</b> || based on [2007.13379](https://arxiv.org/abs/2007.13379) and [2007.15706](https://arxiv.org/abs/2007.15706) with H. Erbin (MIT & CEA-LIST)"
-date: "<b>XVI Avogadro Meeting</b> - December 15th, 2020"
+date: "<b>XVI Avogadro Meeting</b> - December 21st, 2020"
 output:
   ioslides_presentation:
     widescreen: true
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
   $(document).ready(function() {
-    $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"Riccardo Finotello - Inception NN for CICY - 15/12/2020 - XVI Avogadro Meeting\"></footer>');
+    $('slide:not(.title-slide, .backdrop, .segue)').append('<footer label=\"Riccardo Finotello - Inception NN for CICY - 21/12/2020 - XVI Avogadro Meeting\"></footer>');
     })
 </script>
 
