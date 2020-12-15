@@ -215,18 +215,15 @@ $$
 - older in design <span class="green2">[Rosenblatt (1958)]</span>
 - rose to fame **in the 80s** (first self driving cars, OCR, competitions, etc.)
 - simple **matrix multiplications** $+$ **non linearity**
-<div class="red2">
+<span class="red2">
 $$
 a^{\{l+1\}} = \phi\left( w^{\{l\}} a^{\{l\}} + b^{\{l\}} \mathbb{I} \right) \in \mathbb{R}^p
 $$
 $$
 \phi(z) = \mathrm{ReLU}(z) = \max(0, z)
 $$
-</div>
-
-
+</span>
 - **backpropagation** $\rightarrow$ $W^{\{l\}} = \left( w^{\{l\}}, b^{\{l\}} \right)$
-
 </div>
 
 ## Neural Networks as Function Approximators {.build}
@@ -254,7 +251,6 @@ $$
 <div class="fcenter centered">
 ![](img/conv.gif){width=60%}
 </div>
-
 </div>
 
 
