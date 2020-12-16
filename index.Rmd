@@ -190,14 +190,15 @@ Hodge numbers
 ### SUPERVISED LEARNING
 </div>
 
-- replace $R( X )$ with $R_n( X;\, W )$
+- replace $\mathcal{R}( X )$ with $\mathcal{R}_n( X;\, W )$
+- feed the algorithms $X$ and $h^{p,q}$ (true values)
 - get $W$ such that $\exists n > M > 0$ such that
 <span class="red2">
 $$
-\mathcal{L}(R(X),\, R_n( X;\, W )) < \epsilon, \quad \forall \epsilon > 0
+\mathcal{L}(\mathcal{R}(X),\, \mathcal{R}_n( X;\, W )) < \epsilon, \quad \forall \epsilon > 0
 $$
 </span>
-- follow **gradient descent** $\rightarrow$ find optimal $W$
+- follow **gradient descent** of $\mathcal{L}$ $\rightarrow$ find optimal $W$
 </div>
 <div class="fcenter centered">
 ![](https://imgs.xkcd.com/comics/machine_learning.png){width=75%}]
