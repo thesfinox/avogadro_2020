@@ -100,7 +100,7 @@ where $a^r_{\alpha}$ are **powers** of coordinates on $\mathbb{P}^{n_r}$ in equa
 
 ## Available Data
 
-$\exists$ compiled datasets of **7890** CICY 3-folds with all **Hodge numbers** <span class="green2">[Candelas et al. (1988)]</span>
+$\exists$ compiled datasets of **7890** CICY 3-folds with all **Hodge numbers** <span class="green2">[Green et al. (1987)]</span>
 
 <div class="centered">
 ```{r data, cache=TRUE, out.width="90%"}
