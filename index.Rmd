@@ -74,6 +74,10 @@ Systems of **$k$ homogeneous equations** from products of **$m$ projective space
 
 <div class="red2">
 $$
+\sum\limits_{r = 1}^m p_{\alpha}^{i_r} \left( z_{i_r} \right)^{a^r_{\alpha}} = 0
+\quad
+\rightarrow
+\quad
 X =
 \begin{bmatrix}
   \mathbb{P}^{n_1} &  |  & a^1_1  & \cdots & a^1_k
