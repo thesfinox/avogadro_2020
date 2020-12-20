@@ -74,7 +74,7 @@ Systems of **$k$ homogeneous equations** from products of **$m$ projective space
 
 <div class="red2">
 $$
-\sum\limits_{r = 1}^m p_{\alpha}^{i_r} \left( z_{i_r} \right)^{a^r_{\alpha}} = 0
+\sum\limits_{r = 1}^m p_{\alpha}^{i_r}\, \left( z_{i_r} \right)^{a^r_{\alpha}} = 0
 \quad
 \rightarrow
 \quad
@@ -90,15 +90,19 @@ $$
 </div>
 
 such that
-
 $$
-a^r_{\alpha} \in \mathbb{N},
-\quad
-\dim_{\mathbb{C}} X = \sum\limits_{r = 1}^m n_r - k = 3,
-\quad
+\begin{matrix}
+\text{degree of eq.} & \text{dim. of CY} & c_1 \equiv 0
+\\
+\Downarrow & \Downarrow & \Downarrow
+\\
+a^r_{\alpha} \in \mathbb{N}
+&
+\dim_{\mathbb{C}} X = \sum\limits_{r = 1}^m n_r - k = 3
+&
 n_r + 1 = \sum\limits_{\alpha = 1}^k a^r_{\alpha}
+\end{matrix}
 $$
-
 where $a^r_{\alpha}$ are **powers** of coordinates on $\mathbb{P}^{n_r}$ in equation $\alpha$.
 
 
@@ -191,14 +195,20 @@ Hodge numbers
 </div>
 
 - replace $\mathcal{R}( X )$ with $\mathcal{R}_n( X;\, W )$
+
+    - $W$ are controlled and tuned
+    - **optimisation** problem
+    
 - feed the algorithms $X$ and $h^{p,q}$ (true values)
+
 - get $W$ such that $\exists n > M > 0$ such that
 <span class="red2">
 $$
-\mathcal{L}(\mathcal{R}(X),\, \mathcal{R}_n( X;\, W )) < \epsilon, \quad \forall \epsilon > 0
+\mathcal{L}_n(h^{p,q},\, \widehat{h^{p,q}}) < \epsilon, \quad \forall \epsilon > 0
 $$
 </span>
-- follow **gradient descent** of $\mathcal{L}$ $\rightarrow$ find optimal $W$
+
+- follow **gradient descent** of $\mathcal{L}$ $\rightarrow$ tune $W$
 </div>
 <div class="fcenter centered">
 ![](https://imgs.xkcd.com/comics/machine_learning.png){width=75%}]
@@ -232,7 +242,13 @@ $$
 - **backpropagation** $\rightarrow$ $W^{\{l\}} = \left( w^{\{l\}}, b^{\{l\}} \right)$
 </div>
 
-## Neural Networks as Function Approximators {.build}
+---
+
+<iframe width="100%" src="https://playground.tensorflow.org/#activation=relu&regularization=L2&batchSize=16&dataset=circle&regDataset=reg-plane&learningRate=0.01&regularizationRate=0.01&noise=25&networkShape=4,4,2&seed=0.48645&showTestData=false&discretize=true&percTrainData=80&x=true&y=true&xTimesY=true&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=regression&initZero=false&hideText=false"></iframe>
+
+<div class="green2">https://playground.tensorflow.org</div>
+
+---
 
 <div class="fbox centered">
 ### CONVOLUTIONAL NEURAL NETWORKS
@@ -260,7 +276,7 @@ $$
 </div>
 
 
-## Inception Neural Networks {.build}
+## Inception Neural Networks
 
 <div class="centered">
 ![](img/icnn.png){width=65%}
