@@ -210,7 +210,7 @@ $$
 - follow **gradient descent** of $\mathcal{L}$ $\rightarrow$ tune $W$
 </div>
 <div class="centered">
-![](https://imgs.xkcd.com/comics/machine_learning.png){width=75%}]
+[![](https://imgs.xkcd.com/comics/machine_learning.png){width=70%}](https://xkcd.com/1838/)
 </div>
 </div>
 
