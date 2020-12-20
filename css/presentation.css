@@ -111,8 +111,29 @@ footer:after {
   color: #cf3c45;
 }
 
-.frame {
+.fullslide {
   width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.frame {
+  zoom: 0.75;
+  transform: scale(0.75);
+  transform-origin: 0.0;
+  -ms-transform: scale(0.75);
+  -ms-transform-origin: 0.0;
+  -moz-transform: scale(0.75);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.75);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.75);
+  -webkit-transform-origin: 0 0;
+  
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   white-space: nowrap;

@@ -268,11 +268,9 @@ $$
 
 ---
 
-<div class="centered">
+<div class="fullslide">
 <iframe class="frame" src="https://playground.tensorflow.org/#activation=relu&regularization=L2&batchSize=16&dataset=circle&regDataset=reg-plane&learningRate=0.01&regularizationRate=0.01&noise=25&networkShape=4,4,2&seed=0.48645&showTestData=false&discretize=true&percTrainData=80&x=true&y=true&xTimesY=true&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=regression&initZero=false&hideText=false"></iframe>
 </div>
-
-<div class="cite">https://playground.tensorflow.org</div>
 
 ---
 
