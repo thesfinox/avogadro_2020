@@ -1,3 +1,12 @@
+footer:after {
+    content: attr(label);
+    font-size: 12pt;
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+    line-height: 1.9;
+}
+
 .fbox {
   border: 2px solid grey;
   border-radius: 10px;
