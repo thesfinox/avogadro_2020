@@ -25,31 +25,39 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 ## String Theory Compactification {.build}
 
+<div class="centered">
 **Superstrings** defined in $D = 10 \quad \Rightarrow \quad \mathcal{M}^{1, 9} = \mathcal{M}^{1, 3} \otimes X_6$
-
-<div class="columns-2">
-<div>
-### Requirements
-- $X_6$ is a compact manifold $(M, g)$
-- $N = 1$ **SUSY** in 4D
-- **SM** $\subset$ arising gauge algebra
-</div>
-<br>
-<div>
-### Solution
-- $\dim_{\mathbb{C}} M = m$
-- $\mathrm{Hol}(g) \subseteq \mathrm{SU}(m)$
-- $\mathrm{Ric}(g) \equiv 0$ or $c_1(M) \equiv 0$
-</div>
 </div>
 
-<div class="fbox centered">
-### **Calabi-Yau Manifolds**
+<div class="columns">
+<div class="column-2">
+<h3>Requirements</h3>
+<ul>
+<li>$X_6$ is a compact manifold $(M, g)$</li>
+<li>$N = 1$ **SUSY** in 4D</li>
+<li>**SM** $\subset$ arising gauge algebra</li>
+</ul>
+</div>
+
+<div class="column-2">
+<h3>Solution</h3>
+<ul>
+<li>$\dim_{\mathbb{C}} M = m$</li>
+<li>$\mathrm{Hol}(g) \subseteq \mathrm{SU}(m)$</li>
+<li>$\mathrm{Ric}(g) \equiv 0$ or $c_1(M) \equiv 0$</li>
+</ul>
+</div>
 </div>
 
 <div class="centered">
-- no known **metric** for compact CY
-- need to study **topology** (*Hodge numbers*) to infer **4D properties**
+<h3 class="fbox red2">**Calabi-Yau Manifolds**</h3>
+
+<div class="column-1">
+<ul>
+<li>no known **metric** for compact CY</li>
+<li>need to study **topology** (*Hodge numbers*) to infer **4D properties**</li>
+</ul>
+</div>
 
 <div class="red2">
 $$h^{r,s} = \dim_{\mathbb{C}} \mathrm{H}_{\overline{\partial}}^{r,s}(M, \mathbb{C})$$
@@ -59,9 +67,11 @@ $$h^{r,s} = \dim_{\mathbb{C}} \mathrm{H}_{\overline{\partial}}^{r,s}(M, \mathbb{
 
 ## Complete Intersection Calabi-Yau Manifolds {.build}
 
+<div>
 Systems of **$k$ homogeneous equations** from products of **$m$ projective spaces**
+</div>
 
-<div class="red2">
+<div class="centered red2">
 $$
 \sum\limits_{r = 1}^m p_{\alpha}^{i_r}\, \left( z_{i_r} \right)^{a^r_{\alpha}} = 0
 \quad
@@ -78,7 +88,11 @@ X =
 $$
 </div>
 
+<div>
 such that
+</div>
+
+<div class="centered">
 $$
 \begin{matrix}
 \text{degree of eq.} & \text{dim. of CY} & c_1 \equiv 0
@@ -92,15 +106,21 @@ a^r_{\alpha} \in \mathbb{N}
 n_r + 1 = \sum\limits_{\alpha = 1}^k a^r_{\alpha}
 \end{matrix}
 $$
+</div>
+
+<div>
 where $a^r_{\alpha}$ are **powers** of coordinates on $\mathbb{P}^{n_r}$ in equation $\alpha$.
+</div>
 
 
 ## Available Data
 
-$\exists$ compiled datasets of **7890** CICY 3-folds with all **Hodge numbers** <span class="green2">[Green et al. (1987)]</span>
+<div>
+$\exists$ compiled datasets of **7890** CICY 3-folds with all **Hodge numbers** <span class="cite">[Green et al. (1987)]</span>
+</div>
 
-<div class="centered">
-```{r data, cache=TRUE, out.width="90%"}
+<div class="plot">
+```{r data, cache=TRUE, out.width="100%"}
 # location of the file
 file.url <- "http://www.lpthe.jussieu.fr/~erbin/files/data/cicy3o_data.tar.gz"
 file.dir <- file.path(".", "data")
@@ -160,11 +180,9 @@ hodge <- subplot(layout(h11,
                  heights=0.75,
                  widths=c(0.5, 0.5)
                 ) %>% config(displayModeBar=FALSE)
-hodge <- layout(hodge, title="Distribution of the Hodge Numbers")
 hodge
 ```
 </div>
-
 
 
 ## Supervision and Function Approximation {.build}
@@ -177,30 +195,40 @@ $\quad \longrightarrow \quad$
 Hodge numbers
 </div>
 
-<div class="columns-2 vcenter">
-<div>
+<div class="columns">
+<div class="column-2">
 <div class="fbox centered">
-### SUPERVISED LEARNING
+<h3 class="uppercase">Supervised Learning</h3>
 </div>
-
-- replace $\mathcal{R}( X )$ with $\mathcal{R}_n( X;\, W )$
-
-    - $W$ are controlled and tuned
-    - **optimisation** problem
-    
-- feed the algorithms $X$ and $h^{p,q}$ (true values)
-
-- get $W$ such that $\exists n > M > 0$ such that
-<span class="red2">
+<ul>
+<li>
+replace $\mathcal{R}( X )$ with $\mathcal{R}_n( X;\, W )$
+<ul>
+<li>$W$ are controlled and tuned</li>
+<li>**optimisation** problem</li>
+</ul>
+</li>
+<li>
+feed the algorithms $X$ and $h^{p,q}$ (true values)
+</li>
+<li>
+get $W$ such that $\exists n > M > 0$ such that
+<span class="centered red2">
 $$
 \mathcal{L}_n(h^{p,q},\, \widehat{h^{p,q}}) < \epsilon, \quad \forall \epsilon > 0
 $$
 </span>
-
-- follow **gradient descent** of $\mathcal{L}$ $\rightarrow$ tune $W$
+</li>
+<li>
+follow **gradient descent** of $\mathcal{L}$ $\rightarrow$ tune $W$
+</li>
+</ul>
 </div>
+
+<div class="column-2">
 <div class="centered">
-[![](https://imgs.xkcd.com/comics/machine_learning.png){width=70%}](https://xkcd.com/1838/)
+[![](https://imgs.xkcd.com/comics/machine_learning.png){width=75%}](https://xkcd.com/1838/)
+</div>
 </div>
 </div>
 
@@ -208,58 +236,70 @@ $$
 ## Neural Networks as Function Approximators {.build}
 
 <div class="fbox centered">
-### FULLY CONNECTED NETWORKS
+<h3 class="uppercase">Fully Connected Networks</h3>
 </div>
 
-<div class="columns-2">
-<div class="centered">
+<div class="columns">
+<div class="column-2">
 ![](img/fc.png){width=75%}
 </div>
-<div>
-- older in design <span class="green2">[Rosenblatt (1958)]</span>
-- analogy *neuron - "perceptron"*
-- rose to fame **in the 70s/80s**
-- simple **matrix multiplications** $+$ **non linearity**
-<span class="red2">
+
+<div class="column-2">
+<ul>
+<li>older in design <span class="cite">[Rosenblatt (1958)]</span></li>
+<li>analogy *neuron - "perceptron"*</li>
+<li>rose to fame **in the 70s/80s**</li>
+<li>
+simple **matrix multiplications** $+$ **non linearity**
+<span class="centered red2">
 $$
 a^{\{l+1\}} = \phi\left( w^{\{l\}} a^{\{l\}} + b^{\{l\}} \mathbb{I} \right) \in \mathbb{R}^p
 $$
+</span>
+<span class="centered red2">
 $$
 \phi(z) = \mathrm{ReLU}(z) = \max(0, z)
 $$
 </span>
-- **backpropagation** $\rightarrow$ $W^{\{l\}} = \left( w^{\{l\}}, b^{\{l\}} \right)$
+</li>
+<li>**backpropagation** $\rightarrow$ $W^{\{l\}} = \left( w^{\{l\}}, b^{\{l\}} \right)$</li>
+</div>
 </div>
 
 ---
 
+<div class="centered">
 <iframe class="frame" src="https://playground.tensorflow.org/#activation=relu&regularization=L2&batchSize=16&dataset=circle&regDataset=reg-plane&learningRate=0.01&regularizationRate=0.01&noise=25&networkShape=4,4,2&seed=0.48645&showTestData=false&discretize=true&percTrainData=80&x=true&y=true&xTimesY=true&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=regression&initZero=false&hideText=false"></iframe>
+</div>
 
-<div class="green2">https://playground.tensorflow.org</div>
+<div class="cite">https://playground.tensorflow.org</div>
 
 ---
 
 <div class="fbox centered">
-### CONVOLUTIONAL NEURAL NETWORKS
+<h3 class="uppercase">Convolutional Neural Networks</h3>
 </div>
 
 <div class="centered">
 ![](img/ccnn.png){width=80%}
 </div>
 
-<div class="columns-2">
-<div class="left">
-- newer in conception <span class="green2">[LeCun et al. (1989)]</span>
-- based on **sliding windows** (aka *convolutions*)
+<div class="columns">
+<div class="column-2">
+<ul>
+<li>newer in conception <span class="cite">[LeCun et al. (1989)]</span></li>
+<li>based on **sliding windows** (aka *convolutions*)
 <span class="red2">
 $$
 a^{\{l+1\}} = \phi\left( w^{\{l\}} * a^{\{l\}} + b^{\{l\}} \mathbb{I} \right) \in \mathbb{R}^{p \times q}
 $$
 </span>
-- **less parameters** to *isolate features*
+</li>
+<li>**less parameters** to *isolate features*</li>
+</ul>
 </div>
 
-<div class="centered">
+<div class="column-2 centered">
 ![](img/conv.gif){width=60%}
 </div>
 </div>
@@ -271,24 +311,29 @@ $$
 ![](img/icnn.png){width=65%}
 </div>
 
-<div class="columns-2">
-<div>
-- inspired by **Google** <span class="green2">[Szegedy et al. (2014)]</span>
-- created for **computer vision**
-- $2 \times 10^5$ parameters (vs $\ge 2 \times 10^6$)
+<div class="columns">
+<div class="column-2">
+<ul>
+<li>inspired by **Google** <span class="cite">[Szegedy et al. (2014)]</span></li>
+<li>created for **computer vision**</li>
+<li>$2 \times 10^5$ parameters (vs $\ge 2 \times 10^6$)</li>
+</ul>
 </div>
 
-<div>
-- **concurrent kernels** $\Rightarrow$ shared parameters
-- retains **"spatial awareness"**
-- improved **generalisation ability**
+<div class="column-2">
+<ul>
+<li>**concurrent kernels** $\Rightarrow$ shared parameters</li>
+<li>retains **"spatial awareness"**</li>
+<li>improved **generalisation ability**</li>
+</ul>
 </div>
 </div>
 
 
 ## Results
 
-```{r results, cache=TRUE, out.width="85%"}
+<div class="plot">
+```{r results, cache=TRUE, out.width="100%"}
 # create data
 library(data.table)
 RES <- data.table(accuracy=c(0.77, 0.68, 0.95, 0.83, 0.99, 0.97, 0.36, 0.23, 0.50, 0.33),
@@ -315,7 +360,7 @@ p <- plot_ly(RES,
      animation_opts(500, easing="linear", redraw=FALSE) %>%
      animation_button(hide=TRUE) %>%
      animation_slider(currentvalue=list(prefix="")) %>%
-     layout(title="Accuracy of Inception Architecture",
+     layout(title="Results of Different Architectures",
             xaxis=list(title="",
                        categoryorder="array",
                        categoryarray=RES$type
@@ -326,13 +371,15 @@ p <- plot_ly(RES,
      config(displayModeBar=FALSE)
 p
 ```
+</div>
 
-<div class="fright green2">[Erbin, RF (2020)]</div>
+<div class="fright cite">[Erbin, RF (2020)]</div>
 
 
 ## Comparison
 
-```{r comparison, cache=TRUE, out.width="85%"}
+<div class="plot">
+```{r comparison, cache=TRUE, out.width="100%"}
 # create data
 CFR <- data.table(implementations=factor(c("lin. reg. (80%)",
                                            "SVM RBF (reg., 30%)",
@@ -373,30 +420,36 @@ q <- plot_ly(CFR,
      config(displayModeBar=FALSE)
 q
 ```
+</div>
 
-<div class="fright green2">[Erbin, RF (2020)]</div>
+<div class="fright cite">[Erbin, RF (2020)]</div>
 
 
 ## Conclusion {.build}
 
-<div class="centered fbox blue2">
-<p>[Machine learning is]</p>
-<p>*the field of study that gives computers the ability to learn without being explicitly programmed*.</p>
-<p>A. Samuel (1959)</p>
+<div class="centered fbox quote">
+<p>*[Machine learning is]*</p>
+<p>**the field of study that gives computers the ability to learn without being explicitly programmed.**</p>
+<p class="signature">A. Samuel (1959)</p>
 </div>
-
-- **deep learning** can be a **reliable predictive method**
-- it can be used as **source of inspiration** for **inference and generalisation**
-- **CNN**s have a lot of **unexpressed potential** in physics (*first time?*)
-- the approach intersects **mathematics**, **physics** and **computer science**
-
-### What Lies Ahead?
 
 <div>
-- improve $h^{2,1}$ and **"un-blackbox" the model** (SHAP, filter analysis, etc.)
-- exploration for CICY 4-folds and **representation learning** (DGAN, VAE, RL, etc.)
-- study **symmetries** (GNNs, transformers architectures, etc.) and explore the **string landscape**
+<ul>
+<li>**deep learning** can be a **reliable predictive method**</li>
+<li>it can be used as **source of inspiration** for **inference and generalisation**</li>
+<li>**CNN**s have a lot of **unexpressed potential** in physics (*first time?*)</li>
+<li>the approach intersects **mathematics**, **physics** and **computer science**</li>
+</ul>
+
+<h3>What Lies Ahead?</h3>
+
+<ul>
+<li>improve $h^{2,1}$ and **"un-blackbox" the model** (SHAP, filter analysis, etc.)</li>
+<li>exploration for CICY 4-folds and **representation learning** (DGAN, VAE, RL, etc.)</li>
+<li>study **symmetries** (GNNs, transformers architectures, etc.) and explore the **string landscape**</li>
+</ul>
 </div>
-<div class="fright red2">
-THANK YOU
+
+<div class="thankyou">
+Thank You
 </div>
