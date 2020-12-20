@@ -404,8 +404,8 @@ A. Samuel (1959)
 
 <div>
 - improve $h^{2,1}$ and **"un-blackbox" the model** (SHAP, filter analysis, etc.)
-- exploration for CICY 4-folds and **representation learning** (DGAN, VAE, etc.)
-- study **symmetries** (GNNs, Transformers, etc.) and explore the **sting landscape**
+- exploration for CICY 4-folds and **representation learning** (DGAN, VAE, RL, etc.)
+- study **symmetries** (GNNs, transformers architectures, etc.) and explore the **string landscape**
 </div>
 <div class="fright red2">
 THANK YOU
