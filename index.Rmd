@@ -214,7 +214,7 @@ feed the algorithms $X$ and $h^{p,q}$ (**true values**)
 <li>
 <span class="centered red2">
 $$
-W = \arg\min\limits_{w}\; \mathcal{L}(h^{p,q},\, \mathcal{R}( X;\, w ))
+W = \arg\limits_{w}\min\; \mathcal{L}(h^{p,q},\, \mathcal{R}( X;\, w ))
 $$
 </span>
 </li>
