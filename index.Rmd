@@ -42,8 +42,8 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 <div class="column-2">
 <h3>Solution</h3>
 <ul>
-<li>$\dim_{\mathbb{C}} M = m$</li>
-<li>$\mathrm{Hol}(g) \subseteq \mathrm{SU}(m)$</li>
+<li>$\dim_{\mathbb{C}} M = 3$</li>
+<li>$\mathrm{Hol}(g) \subseteq \mathrm{SU}(3)$</li>
 <li>$\mathrm{Ric}(g) \equiv 0$ or $c_1(M) \equiv 0$</li>
 </ul>
 </div>
@@ -188,11 +188,15 @@ hodge
 ## Supervision and Function Approximation {.build}
 
 <div class="centered">
-configuration matrix
-$\quad \longrightarrow \quad$
-$\mathcal{R}\colon \quad \mathbb{N}^{m \times k} \longrightarrow \mathbb{N}$
-$\quad \longrightarrow \quad$
-Hodge numbers
+$$
+\begin{matrix}
+\mathcal{R}\colon & \mathbb{N}^{m \times k} & \longrightarrow & \mathbb{N}^2
+\\[0.5em]
+                  & X                       & \mapsto         & (h^{1,1},\, h^{2,1})
+\\[0.5em]
+                  & \text{(conf. matrix)}   &                 & \text{(Hodge no.)}
+\end{matrix}
+$$
 </div>
 
 <div class="columns">
@@ -202,20 +206,15 @@ Hodge numbers
 </div>
 <ul>
 <li>
-replace $\mathcal{R}( X )$ with $\mathcal{R}_n( X;\, W )$
-<ul>
-<li>$W$ are controlled and tuned</li>
-<li>**optimisation** problem</li>
-</ul>
+replace $\mathcal{R}( X )$ with $\mathcal{R}( X;\, W )$ ($W$ **weights**)
 </li>
 <li>
-feed the algorithms $X$ and $h^{p,q}$ (true values)
+feed the algorithms $X$ and $h^{p,q}$ (**true values**)
 </li>
 <li>
-get $W$ such that $\exists n > M > 0$ such that
 <span class="centered red2">
 $$
-\mathcal{L}_n(h^{p,q},\, \widehat{h^{p,q}}) < \epsilon, \quad \forall \epsilon > 0
+W = \arg\min\limits_{w}\; \mathcal{L}(h^{p,q},\, \mathcal{R}( X;\, w ))
 $$
 </span>
 </li>
@@ -227,7 +226,7 @@ follow **gradient descent** of $\mathcal{L}$ $\rightarrow$ tune $W$
 
 <div class="column-2">
 <div class="centered">
-[![](https://imgs.xkcd.com/comics/machine_learning.png){width=75%}](https://xkcd.com/1838/)
+[![](https://imgs.xkcd.com/comics/machine_learning.png){width=55%}](https://xkcd.com/1838/)
 </div>
 </div>
 </div>
@@ -262,14 +261,7 @@ $$
 $$
 </span>
 </li>
-<li>**backpropagation** $\rightarrow$ $W^{\{l\}} = \left( w^{\{l\}}, b^{\{l\}} \right)$</li>
 </div>
-</div>
-
----
-
-<div class="fullslide">
-<iframe class="frame" src="https://playground.tensorflow.org/#activation=relu&regularization=L2&batchSize=16&dataset=circle&regDataset=reg-plane&learningRate=0.01&regularizationRate=0.01&noise=25&networkShape=4,4,2&seed=0.48645&showTestData=false&discretize=true&percTrainData=80&x=true&y=true&xTimesY=true&xSquared=true&ySquared=true&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=regression&initZero=false&hideText=false"></iframe>
 </div>
 
 ---
